@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getBlockByNumber, getGasPrice, getLatestBlock } from "../utils/web3";
 import BlockList from "./BlockList";
+import Footer from "./Footer";
 import Navbar from "./Navbar";
 import Summary from "./Summary";
 
@@ -38,17 +39,24 @@ function App() {
   return (
     <div className="h-screen w-screen">
       <Navbar />
-      <div className="flex flex-col mx-auto w-full max-w-4xl justify-end my-4 justify-between">
-        <div className="w-full flex py-4">
-          <Summary
-            gasPrice={gasPrice}
-            difficulty={difficulty}
-            latestBlockNumber={latestBlockNumber}
-          />
+      <div className="flex w-full mx-auto justify-center items-center bg-green-900">
+        <div className="flex w-full max-x4xl py-32">
+          <div className="w-full flex py-4">
+            <Summary
+              gasPrice={gasPrice}
+              difficulty={difficulty}
+              latestBlockNumber={latestBlockNumber}
+            />
+          </div>
         </div>
-        <div className="w-full flex py-4">
+      </div>
+      <div className="flex flex-col mx-auto w-full max-w-4xl justify-end my-4 justify-between">
+        <div className="w-full flex -mt-24 bg-white rounded-md shadow-md">
           <BlockList blocks={latestBlocks} />
         </div>
+      </div>
+      <div className="flex w-full mx-auto justify-center items-center bg-green-900 mt-8">
+        <Footer />
       </div>
     </div>
   );
