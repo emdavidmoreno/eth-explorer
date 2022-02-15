@@ -40,7 +40,7 @@ function App() {
     <div className="h-screen w-screen">
       <Navbar />
       <div className="flex w-full mx-auto justify-center items-center bg-green-900">
-        <div className="flex w-full max-x4xl py-32">
+        <div className="flex w-full max-w-4xl py-32">
           <div className="w-full flex py-4">
             <Summary
               gasPrice={gasPrice}
@@ -50,7 +50,7 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col mx-auto w-full max-w-4xl justify-end my-4 justify-between">
+      <div className="flex flex-col mx-auto w-full max-w-4xl justify-end my-4 justify-between px-4">
         <div className="w-full flex -mt-24 bg-white rounded-md shadow-md">
           <BlockList blocks={latestBlocks} />
         </div>
